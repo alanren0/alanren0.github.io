@@ -8,7 +8,9 @@ html, body {
 }
 
 .projects-header {
-    border-bottom: 3px solid #2079c7;
+    border-bottom: 5px solid #a4c2f4;
+    color:#2079c7;
+
 }
 
 .projects-container {
