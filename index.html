@@ -1,28 +1,355 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
-        <meta charset="UTF-8">
         <title>Portfolio</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" type="text/css" href="index.css">
+        <link rel="stylesheet" type="text/css" href="timeline.css">
+        <link rel="stylesheet" type="text/css" href="projects.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     </head>
-    <body>
-        <div class="top-background"></div>
-        <div style="text-align: center;">
-            <div style="margin: 40px 20px 40px 20px; padding: 20px;">
-                <h1 class="projects-header">Interactive Projects</h1>
-                <div id="projects1" class="projects-container">
-                    <!-- stuff -->
-                </div>
-            </div>
 
-            <div style="margin: 40px 20px 40px 20px; padding: 20px;">
-                <h1 class="projects-header">Other Projects</h1>
-                <div id="projects2" class="projects-container">
-                    <!-- stuff -->
+    <body>
+        <meta id="myViewport" name="viewport" content="width = 380">
+        <!-- navbar -->
+        <div class="nav-wrapper" id="nav">
+            <div class="nav restrict-size">
+                <div class="logo-container">
+                    Alan Ren
+                </div>
+
+                <div class="links-container">
+                    <a href="https://github.com/alanren0" target="_blank">
+                        <img class="link-image" src="./images/github-mark-white.svg">
+                    </a>
                 </div>
             </div>
         </div>
 
-        <script src="index.js" defer></script>
+        <!-- hero -->
+        <div class="hero-section section-padding" id="parallax">
+            <div class="hero-wrapper">
+                <div class="hero-text">
+                    <div class="hero-text-1">
+                        Hello &#128075;
+                        <br>    
+                        <br>
+                        I am a computer science graduate with hands-on experience as both a <span class="text-emphasis">software developer</span> and <span class="text-emphasis">software tester</span>.
+                    </div>
+                    I am passionate about technology and am always eager to take on new challenges and learn new skills as I mature as a developer.
+
+                </div>
+            </div>
+        </div>
+
+        <!-- timeline -->
+        <div class="timeline-section">
+
+            <div class="heading-container">
+                <h2 class="section-heading">Timeline</h2>
+            </div>
+            
+
+            <div class="timeline-wrapper restrict-size">
+                <ul class="timeline">
+                    <li class="timeline-card">
+                        <h3 class="timeline-date">2021</h3>
+                        <div class="timeline-content">
+
+                            <div class="timeline-subheading-container">
+                                <h4 class="timeline-subheading">
+                                    Revvity<br>
+                                    Associate Software QA Engineer
+                                </h4>
+                                <h4 class="timeline-subheading">Jan. - Aug.</h4>
+                            </div>
+                        
+                            <p>
+                                Developed automated tests to ensure thorough coverage and detect defects early in the development process.
+                            </p>
+                            <h5 class="timeline-subheading">Technologies Used</h5>
+                            <ul>
+                                <li>Java, JavaScript</li>
+                                <li>Ghost Inspector</li>
+                                <li>Selenium and Cucumber</li>
+                                <li>Jenkins</li>
+                                <li>Github</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="timeline-card">
+                        <h3 class="timeline-date">2022</h3>
+                        <div class="timeline-content">
+
+                            <div class="timeline-subheading-container">
+                                <h4 class="timeline-subheading">
+                                    Arctic Wolf<br>
+                                    Software Developer
+                                </h4>
+                                <h4 class="timeline-subheading">May - Dec.</h4>
+                            </div>
+                        
+                            <p>
+                                Developed and maintained a range of test and build tools, enhancing the developer experience and improving the efficiency across multiple teams.
+                            </p>
+                            <h5 class="timeline-subheading">Technologies Used</h5>
+                            <ul>
+                                <li>Python, Bash</li>
+                                <li>Terraform, Cloudformation</li>
+                                <li>AWS</li>
+                                <li>Github, Github Actions</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="timeline-card">
+                        <h3 class="timeline-date">2023</h3>
+                        <div class="timeline-content">
+
+                            <div class="timeline-subheading-container">
+                                <h4 class="timeline-subheading">Graduated from University of Guelph</h4>
+                            </div>
+
+                            <p>
+                                Studied Computer Science and graduated with distinction from the Univserity of Guelph, gaining a solid foundation in programming, algorithms, and software design.
+                            </p>
+                            <h5 class="timeline-subheading">New Skills Learned</h5>
+                            <ul>
+                                <li>C, Java, Python, Javascript, SQL, VHDL, HTML, CSS</li>
+                                <li>OOP, Data Structures, Algorithms</li>
+                                <li>JSON, XML</li>
+                                <li>AWS, GCP, Azure</li>
+                                <li>Gitlab, React, Flask, Playwright</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+        <!-- projects -->
+        
+        <div class="projects-section" id="project-section">
+            <div class="heading-container sticky" id="projects-header">
+                <h2 class="section-heading">Projects</h2>
+            </div>
+            <div class="projects-wrapper">
+
+                <!-- 1 -->
+                <div class="project-wrapper">
+                    <div class="project-card">
+
+                        <h2 class="project-name">Sorting Visualizer</h2>
+
+                        <div class="project-image-container">
+                            <img class="project-image" src="./images/projects/sortingVisualizer.png">
+                        </div>
+
+                        <div class="project-text-container"> 
+                            <div>
+                                <p class="project-text">
+                                    A Sorting Visualizer, made with <span class="project-text-emphasis">HTML/CSS</span>, <span class="project-text-emphasis">Javascript</span>, and <span class="project-text-emphasis">Chart.js</span>.
+                                </p>
+                                <div class="project-text-emphasis">Features:</div>
+                                <ul class="project-list">
+                                    <li class="project-text">Includes Selection Sort, Bubble Sort, Insertion Sort, Merge Sort, and Quick Sort</li>
+                                    <li class="project-text">Colored graph dynamically shows steps for each sorting algorithm</li>
+                                    <li class="project-text">Speed Slider to slow down animations</li>
+                                </ul>
+                                <a href="https://alanren0.github.io/SortingVisualizer/" target="_blank" class="project-link">Visit Website</a>
+                                <a href="https://github.com/alanren0/SortingVisualizer" target="_blank" class="project-link">View Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2 -->
+                <div class="project-wrapper">
+                    <div class="project-card">
+                        
+                        <h2 class="project-name">Social Media App</h2>
+
+                        <div class="project-image-container">
+                            <img class="project-image" src="./images/projects/social_media.png">
+                        </div>
+
+                        <div class="project-text-container"> 
+                            <div>
+                                <p class="project-text">
+                                    A Full stack social media app made using <span class="project-text-emphasis">React</span>, <span class="project-text-emphasis">Flask</span>, and <span class="project-text-emphasis">PostgreSQL</span>.
+                                </p>
+                                <div class="project-text-emphasis">Features:</div>
+                                <ul class="project-list">
+                                    <li class="project-text">JWT authentication</li>
+                                    <li class="project-text">Post and comment creation and editing</li>
+                                    <li class="project-text">custom user feeds</li>
+                                    <li class="project-text">custom user profiles</li>
+                                    <li class="project-text">following users</li>
+                                    <li class="project-text">liking posts and comments</li>
+                                </ul>
+                                <a href="https://github.com/alanren0/SocialMediaApp" target="_blank" class="project-link">View Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 3 -->
+                <div class="project-wrapper">
+                    <div class="project-card">
+                        
+                        <h2 class="project-name">Color App</h2>
+
+                        <div class="project-image-container">
+                            <img class="project-image" src="./images/projects/colors.png">
+                        </div>
+
+                        <div class="project-text-container"> 
+                            <div>
+                                <p class="project-text">
+                                    A React app for generating and viewing color schemes. Made using <span class="project-text-emphasis">React</span>, <span class="project-text-emphasis">Go</span>, <span class="project-text-emphasis">PostgreSQL</span>, and The Color API
+                                </p>
+                                <div class="project-text-emphasis" style="margin-top: 12px;">Features:</div>
+                                <ul class="project-list">
+                                    <li class="project-text">Color scheme generation based on starting color and chosen scheme</li>
+                                    <li class="project-text">Saving color schemes</li>
+                                    <li class="project-text">Clipboard copy functionality for each color</li>
+                                </ul>
+                                <a href="https://github.com/alanren0/ColoursApp" target="_blank" class="project-link">View Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 4 -->
+                <div class="project-wrapper">
+                    <div class="project-card">
+
+                        <h2 class="project-name">News App</h2>
+
+                        <div class="project-image-container">
+                            <img class="project-image" src="./images/projects/news.png">
+                        </div>
+                        
+                        <div class="project-text-container"> 
+                            <div>
+                                <p class="project-text">
+                                    A React app that provides news made using <span class="project-text-emphasis">React</span> and TheNews API.
+                                </p>
+                                <div class="project-text-emphasis">Features:</div>
+                                <ul class="project-list">
+                                    <li class="project-text">Recent news information articles from various sources</li>
+                                    <li class="project-text">Similar news search button for each article</li>
+                                    <li class="project-text">Saving articles</li>
+                                    <li class="project-text">Category filters to get the most relevant news</li>
+                                </ul>
+                                <a href="https://github.com/alanren0/NewsApp" target="_blank" class="project-link">View Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5 -->
+                <div class="project-wrapper">
+                    <div class="project-card">
+
+                        <h2 class="project-name">Recipe App</h2>
+
+                        <div class="project-image-container">
+                            <img class="project-image" src="./images/projects/recipe.png">
+                        </div>
+                        
+                        <div class="project-text-container">
+                            <div>
+                                <p class="project-text">
+                                    A React app for finding recipes and recipe recommendations. Made using <span class="project-text-emphasis">React</span> and the Spoonacular API.
+                                </p>
+                                <div class="project-text-emphasis">Features:</div>
+                                <ul class="project-list">
+                                    <li class="project-text">Search for recipes</li>
+                                    <li class="project-text">Refined searching with multiple filter options</li>
+                                    <li class="project-text">Similar recipes displayed on each recipe page</li>
+                                </ul>
+                                <a href="https://github.com/alanren0/RecipeApp" target="_blank" class="project-link">View Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6 -->
+                <div class="project-wrapper">
+                    <div class="project-card">
+
+                        <h2 class="project-name">Weather App</h2>
+
+                        <div class="project-image-container">
+                            <img class="project-image" src="./images/projects/weather.png">
+                        </div>
+
+                        <div class="project-text-container"> 
+                            <div>
+                                <p class="project-text">
+                                    A React app that provides the current weather information. Made using <span class="project-text-emphasis">React</span> and the Weather API.
+                                </p>
+                                <div class="project-text-emphasis">Features:</div>
+                                <ul class="project-list">
+                                    <li class="project-text">Provides current weather information</li>
+                                    <li class="project-text">Search functionality to get weather based on your location</li>
+                                    <li class="project-text">24 hour temperature graph</li>
+                                    <li class="project-text">Toggle funcionality to switch between metric and imperial units</li>
+                                </ul>
+                                <a href="https://github.com/alanren0/WeatherApp" target="_blank" class="project-link">View Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7 -->
+                <div class="project-wrapper">
+                    
+                    <div class="project-card">
+                        
+                        <h2 class="project-name">Forum App</h2>
+                        
+                        <div class="project-image-container">
+                            <img class="project-image" src="./images/projects/forum.png">
+                        </div>
+
+                        <div class="project-text-container"> 
+                            <div>
+                                <h3>Mongodb, Expresss, React, Node</h3>
+                                <p class="project-text">
+                                    Created a Full Stack forum app. Made using Mongodb, Express, React, and Nodejs.
+                                </p>
+                                <div class="project-text-emphasis">Features:</div>
+                                <ul class="project-list">
+                                    <li class="project-text">Post, comment, and community creation</li>
+                                    <li class="project-text">JWT authentication</li>
+                                    <li class="project-text">Comment trees</li>
+                                    <li class="project-text">Community filtering</li>
+                                    <li class="project-text">Upvotes/downvotes</li>
+                                </ul>
+                                <a href="https://github.com/alanren0/Forum" target="_blank" class="project-link">View Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="heading-container" style="height: 30px"></div>
+
+        </div>
+        
+        <script src="https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js"></script>
+        <script src="index.js" charset="UTF-8"></script>
     </body>
+
+    <!-- footer -->
+    <footer class="footer-wrapper">
+        <div class="links-container">
+            <a href="https://github.com/alanren0" target="_blank">
+                <img class="link-image" src="./images/github-mark-white.svg">
+            </a>
+        </div>
+    </footer>
 </html>

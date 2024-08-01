@@ -1,58 +1,69 @@
-pagesProjects = [{
-    title: 'Sorting Visualizer',
-    img: 'imgs/sortingVisualizer.png',
-    url: 'https://alanren0.github.io/SortingVisualizer',
-}]
 
-otherProjects = [{
-    title: 'Social Media App',
-    img: 'imgs/socialMedia.png',
-    url: 'https://github.com/alanren0/SocialMediaApp',
-}, {
-    title: 'Forum App',
-    img: 'imgs/forum.png',
-    url: 'https://github.com/alanren0/Forum',
-}, {
-    title: 'Color App',
-    img: 'imgs/colors.png',
-    url: 'https://github.com/alanren0/ColoursApp',
-}, {
-    title: 'News App',
-    img: 'imgs/news.png',
-    url: 'https://github.com/alanren0/NewsApp',
+// animate projects
+function animateProjects() {
+    let containers = document.getElementsByClassName('project-wrapper');
+    let latestContainer = 0;
 
-}, {
-    title: 'Recipe App',
-    img: 'imgs/recipe.png',
-    url: 'https://github.com/alanren0/RecipeApp',
-}, {
-    title: 'Weather App',
-    img: 'imgs/weather.png',
-    url: 'https://github.com/alanren0/WeatherApp',
-}]
+    for (let i = 0; i < containers.length; i++) {
+        let containerPos = containers[i].getBoundingClientRect().top;
 
-pagesProjects.forEach(project => {
-    createCard(document.getElementById('projects1'), project)
+        // reset classes
+        containers[i].classList.remove('active');
+        containers[i].classList.remove('exited');
+        containers[i].classList.remove('inactive');
+
+        // all text containers that are above threshold
+        if (window.innerHeight * 0.2 > containerPos) {
+            containers[i].classList.add('exited');
+            latestContainer = i;
+        } else { // all text containers that are below threshold
+            containers[i].classList.add('inactive');
+        }       
+    }
+
+    // make the last seen container active
+    containers[latestContainer].classList.remove('inactive');
+    containers[latestContainer].classList.remove('exited');
+    containers[latestContainer].classList.add('active');
+}
+
+window.addEventListener('scroll', () => {
+    animateProjects();
 });
 
-otherProjects.forEach(project => {
-    createCard(document.getElementById('projects2'), project)
+window.onload = animateProjects;
+
+
+// animate nav
+let prevScroll = window.scrollY;
+window.addEventListener('scroll', function() {
+    // show nav when scroll up
+    if (window.scrollY < prevScroll) {
+        document.getElementById('nav').style.top = '0';
+    } 
+    // hide nav when scroll down
+    else { 
+        document.getElementById('nav').style.top = '-69px';
+    }
+    prevScroll = window.scrollY;
 });
 
-function createCard(parent, project) {
-    const a = document.createElement('a');
-    a.classList.add('card');
-    a.setAttribute('href', project.url);
-    parent.appendChild(a);
+// mouse parallax
+window.addEventListener('mousemove', parallax);
 
-    const div = document.createElement('div');
-    a.appendChild(div);
+const el = document.querySelector("#parallax");
+const projs = document.querySelector("#project-section");
 
-    const img = document.createElement('img');
-    img.setAttribute('src', project.img);
-    div.appendChild(img);
+function parallax(e) {
+    let w = window.innerWidth/2;
+    let h = window.innerHeight/2;
+    let mouseX = e.clientX;
+    let mouseY = e.clientY;
 
-    const p = document.createElement('p');
-    p.innerHTML = project.title;
-    div.appendChild(p);
+    let depth1 = `-${50 - (mouseX - w) * 0.002}% -${50 - (mouseY - h) * 0.002}%`
+    let depth2 = `-${50 - (mouseX - w) * 0.001}% -${50 - (mouseY - h) * 0.001}%`
+
+    let pos = `${depth1}, ${depth2}`;
+    el.style.backgroundPosition = pos;
+    projs.style.backgroundPosition = pos;
 }
