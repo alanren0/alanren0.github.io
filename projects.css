@@ -8,7 +8,7 @@
     flex-direction: column;
     overflow: clip;
     background-color: var(--main-background);
-    background-image: url('images/background/dots3.png'), url('images/background/dots.png'), linear-gradient(var(--main-background), black);
+    background-image: url('./images/background/dots3.png'), url('./images/background/dots.png'), linear-gradient(var(--main-background), black);
     background-size: 150%;
     background-attachment: fixed;
     
