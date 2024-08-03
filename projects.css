@@ -3,8 +3,8 @@
 .projects-section {
     --before-opacity: 0;
     --after-opacity: 0;
-    --project-background-before: ;
-    --project-background-after: ;
+    --project-background-before: "";
+    --project-background-after: "";
     min-width: 300px;
     display: flex;
     justify-content: center;
