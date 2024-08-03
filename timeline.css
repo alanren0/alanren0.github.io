@@ -6,7 +6,6 @@
     align-items: center;
     flex-direction: column;
     background-color: rgb(31, 31, 31);
-    background-image: url('images/pattern.svg');
     position: relative;
     z-index: 1;
     min-height: 90vh;

@@ -27,11 +27,34 @@ function animateProjects() {
     containers[latestContainer].classList.add('active');
 }
 
+// animate background for web designs
+function animateBackground() {
+    let projects = document.getElementsByClassName('project-wrapper');
+    let background = document.getElementsByClassName('projects-section')[0];
+
+    if (projects[0].classList.contains('active')) {
+        background.style.setProperty("--project-background-before", "url('./images/background/portfolio1_background.svg')");
+        background.style.setProperty("--before-opacity", "1");
+        background.style.setProperty("--after-opacity", "0");
+    } else if (projects[1].classList.contains('active')) {
+        background.style.setProperty("--project-background-after", "url('./images/background/portfolio2_background.png')");
+        background.style.setProperty("--before-opacity", "0");
+        background.style.setProperty("--after-opacity", "1");
+    } else {
+        background.style.setProperty("--before-opacity", "0");
+        background.style.setProperty("--after-opacity", "0");
+    }
+}
+
 window.addEventListener('scroll', () => {
     animateProjects();
+    animateBackground();
 });
 
-window.onload = animateProjects;
+window.onload = () => {
+    animateProjects();
+    animateBackground();
+}
 
 
 // animate nav

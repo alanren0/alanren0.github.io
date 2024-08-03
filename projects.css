@@ -1,6 +1,10 @@
 
 /* projects */
 .projects-section {
+    --before-opacity: 0;
+    --after-opacity: 0;
+    --project-background-before: ;
+    --project-background-after: ;
     min-width: 300px;
     display: flex;
     justify-content: center;
@@ -8,10 +12,38 @@
     flex-direction: column;
     overflow: clip;
     background-color: var(--main-background);
-    background-image: url('./images/background/dots3.png'), url('./images/background/dots.png'), linear-gradient(var(--main-background), black);
+    background-image: url('./images/background/dots2.png'), url('./images/background/dots.png'), linear-gradient(var(--main-background), black);
     background-size: 150%;
     background-attachment: fixed;
     
+}
+
+.projects-section::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: var(--project-background-before);
+    background-size: contain;
+    opacity: var(--before-opacity);
+    z-index: 0;
+
+    transition: all 1s;
+}
+
+.projects-section::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: var(--project-background-after);
+    background-size: contain;
+    opacity: var(--after-opacity);
+    z-index: 0;
+
+    transition: all 1s;
 }
 
 .projects-wrapper {
@@ -32,6 +64,7 @@
     align-items: center;
     position: sticky;
     top: 0;
+    z-index: 1;
 
     opacity: 0;
     transition: all 1s;
@@ -47,18 +80,22 @@
     min-width: 500px;
     z-index: -1;
 
-    transform: translate(-50%, -25%) rotate(-20deg) scale(1, 4);
+    transform: translate(-50%, -25%) rotate(-20deg) scale(1, 8);
 }
 
 .project-wrapper:nth-child(3n+1)::before {
     background-image: repeating-linear-gradient(
         to right, 
         transparent 0%, 
-        transparent 1%, 
-        var(--accent-color1) 1.1%, 
-        var(--accent-color1) 18.9%, 
-        transparent 19%, 
-        transparent 20%
+        transparent 0.5%, 
+        var(--accent-color1) 0.6%, 
+        var(--accent-color1) 24.9%, 
+        transparent 25%, 
+        transparent 26%,
+        var(--accent-color1-2) 26.1%, 
+        var(--accent-color1-2) 49.4%,
+        transparent 49.5%, 
+        transparent 50%
     );
 }
 
@@ -66,11 +103,15 @@
     background-image: repeating-linear-gradient(
         to right, 
         transparent 0%, 
-        transparent 1%, 
-        var(--accent-color2) 1.1%, 
-        var(--accent-color2) 18.9%, 
-        transparent 19%, 
-        transparent 20%
+        transparent 0.5%, 
+        var(--accent-color2) 0.6%, 
+        var(--accent-color2) 24.9%, 
+        transparent 25%, 
+        transparent 26%,
+        var(--accent-color2-2) 26.1%, 
+        var(--accent-color2-2) 49.4%,
+        transparent 49.5%, 
+        transparent 50%
     );
 }
 
@@ -78,17 +119,22 @@
     background-image: repeating-linear-gradient(
         to right, 
         transparent 0%, 
-        transparent 1%, 
-        var(--accent-color3) 1.1%, 
-        var(--accent-color3) 18.9%, 
-        transparent 19%, 
-        transparent 20%
+        transparent 0.5%, 
+        var(--accent-color3) 0.6%, 
+        var(--accent-color3) 24.9%, 
+        transparent 25%, 
+        transparent 26%,
+        var(--accent-color3-2) 26.1%, 
+        var(--accent-color3-2) 49.4%,
+        transparent 49.5%, 
+        transparent 50%
     );
 }
 
 .project-card {
     display: flex;
     width: 100%;
+    max-height: calc(80vh - 70px);
     justify-content: space-between;
     align-items: stretch;
     position: sticky;
@@ -117,7 +163,7 @@
 }
 
 .project-image {
-    background-color: rgb(32, 32, 32);
+    background-color: rgb(32, 32, 32, 0.5);
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -136,7 +182,7 @@
     border-radius: 10px;
     box-shadow: rgb(0, 0, 0, 0.4) 4px 4px 4px;
 
-    transform: translate(-20px, 0);
+    transform: translate(-20px, -30px);
 }
 
 .project-wrapper:nth-child(3n+1) .project-name {
@@ -156,12 +202,7 @@
     align-items: center;
     width: 50%;
     color: white;
-}
-
-.project-heading {
-    font-size: 48px;
-    text-transform: uppercase;
-    margin: 0;
+    overflow: auto;
 }
 
 .project-list {
@@ -215,6 +256,72 @@
     background-color: var(--accent-color3-darker);
 }
 
+.design-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-height: calc(80vh - 70px);
+    justify-content: space-between;
+    align-items: stretch;
+    position: sticky;
+    top: 0;
+    padding: 40px 20px 20px 20px;
+    margin-top: 70px;
+    box-shadow: rgb(0, 0, 0, 0.5) 8px 8px 4px;
+    border-radius: 20px;
+}
+.project-wrapper:nth-child(3n+1) .design-card {
+    background-image: linear-gradient(to right, var(--accent-color1), var(--accent-color1-2));
+}
+.project-wrapper:nth-child(3n+2) .design-card {
+    background-image: linear-gradient(to right, var(--accent-color2), var(--accent-color2-2));
+}
+.project-wrapper:nth-child(3n+0) .design-card {
+    background-image: linear-gradient(to right, var(--accent-color3), var(--accent-color3-2));
+}
+
+.design-image-container {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.design-image {
+    background-color: rgb(32, 32, 32);
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 20px;
+}
+
+.design-link {
+    border: none;
+    padding: 5px 10px;
+    margin: 8px 0;
+    margin-left: auto;
+    right: 0;
+    width: 150px;
+    display:inline-block;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px rgb(0, 0, 0, 0.5);
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+    background-color: white;
+
+    position: relative;
+    z-index: 10;
+
+    transition: all 0.5s;
+}
+.design-link:hover {
+    background-color: rgb(214, 214, 214);
+    transform: translateX(5px);
+}
+
 .exited {
     opacity: 0;
     transform: translate(0, -10vh);
@@ -233,6 +340,11 @@
 }
 
 @media only screen and (max-width: 768px) {
+
+    .projects-wrapper {
+        padding: 0 10px
+    }
+
     .project-card {
         flex-direction: column;
         gap: 32px;
@@ -240,13 +352,15 @@
 
     .project-image-container {
         width: 100%;
+        min-height: 70px;
         max-height: 200px;
         display: inline-block;
         overflow: hidden;
     }
 
     .project-image {
-        object-fit: cover;
+        height: 100%;
+        object-fit: contain;
         object-position: top;
     }
 
@@ -254,4 +368,15 @@
         width: 100%;
     }
 
+    .project-text {
+        font-size: 16px;
+    }
+    
+    .project-text-emphasis {
+        font-size: 16px;
+    }
+
+    .project-name {
+        font-size: 18px;
+    }
 } 
