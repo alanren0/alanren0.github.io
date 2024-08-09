@@ -82,8 +82,7 @@ body {
     display: flex;
     justify-content: center;
     height: 70vh;
-    background-image: url('images/background/dots2.png'), url('images/background/dots.png'), linear-gradient(var(--main-background), black);
-    background-size: 150%;
+    background-image: url('images/background/dots2.png'), linear-gradient(var(--main-background), black);
     position: relative;
     z-index: 1;
 }

@@ -12,8 +12,7 @@
     flex-direction: column;
     overflow: clip;
     background-color: var(--main-background);
-    background-image: url('./images/background/dots2.png'), url('./images/background/dots.png'), linear-gradient(var(--main-background), black);
-    background-size: 150%;
+    background-image: url('./images/background/dots2.png'), linear-gradient(var(--main-background), black);
     background-attachment: fixed;
     
 }

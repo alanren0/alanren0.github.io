@@ -70,23 +70,3 @@ window.addEventListener('scroll', function() {
     }
     prevScroll = window.scrollY;
 });
-
-// mouse parallax
-window.addEventListener('mousemove', parallax);
-
-const el = document.querySelector("#parallax");
-const projs = document.querySelector("#project-section");
-
-function parallax(e) {
-    let w = window.innerWidth/2;
-    let h = window.innerHeight/2;
-    let mouseX = e.clientX;
-    let mouseY = e.clientY;
-
-    let depth1 = `-${50 - (mouseX - w) * 0.002}% -${50 - (mouseY - h) * 0.002}%`
-    let depth2 = `-${50 - (mouseX - w) * 0.001}% -${50 - (mouseY - h) * 0.001}%`
-
-    let pos = `${depth1}, ${depth2}`;
-    el.style.backgroundPosition = pos;
-    projs.style.backgroundPosition = pos;
-}
