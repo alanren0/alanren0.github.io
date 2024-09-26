@@ -12,7 +12,6 @@
     flex-direction: column;
     overflow: clip;
     background-color: var(--main-background);
-    background-image: url('./images/background/dots2.png'), linear-gradient(var(--main-background), black);
     background-attachment: fixed;
     
 }
@@ -28,7 +27,7 @@
     opacity: var(--before-opacity);
     z-index: 0;
 
-    transition: all 0.7s;
+    transition: all 0.5s;
 }
 
 .projects-section::after {
@@ -42,7 +41,7 @@
     opacity: var(--after-opacity);
     z-index: 0;
 
-    transition: all 0.7s;
+    transition: all 0.5s;
 }
 
 .projects-wrapper {
@@ -66,7 +65,7 @@
     z-index: 1;
 
     opacity: 0;
-    transition: all 0.7s;
+    transition: all 0.5s;
 }
 
 
@@ -145,13 +144,13 @@
 }
 
 .project-wrapper:nth-child(3n+1) .project-card {
-    background-image: linear-gradient(to right, var(--accent-color1), rgb(39, 39, 39));
+    background-image: linear-gradient(to right, var(--accent-color1), var(--main-background));
 }
 .project-wrapper:nth-child(3n+2) .project-card {
-    background-image: linear-gradient(to right, var(--accent-color2), rgb(39, 39, 39));
+    background-image: linear-gradient(to right, var(--accent-color2), var(--main-background));
 }
 .project-wrapper:nth-child(3n+0) .project-card {
-    background-image: linear-gradient(to right, var(--accent-color3), rgb(39, 39, 39));
+    background-image: linear-gradient(to right, var(--accent-color3), var(--main-background));
 }
 
 .project-image-container {
@@ -180,6 +179,7 @@
     margin: 5px 0;
     border-radius: 10px;
     box-shadow: rgb(0, 0, 0, 0.4) 4px 4px 4px;
+    color: var(--text-color);
 
     transform: translate(-20px, -30px);
 }
@@ -200,7 +200,7 @@
     display: flex;
     align-items: center;
     width: 50%;
-    color: white;
+    color: var(--text-color);
     overflow: auto;
 }
 
@@ -210,6 +210,7 @@
 
 .project-text {
     font-size: 16px;
+    font-weight: 500;
     margin: 0;
 }
 
@@ -227,9 +228,9 @@
     display:inline-block;
     border-radius: 10px;
     box-shadow: 2px 2px 2px rgb(0, 0, 0, 0.5);
-    color: black;
+    color: var(--text-color);
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
 
     position: relative;
     z-index: 10;
@@ -306,9 +307,9 @@
     display:inline-block;
     border-radius: 10px;
     box-shadow: 2px 2px 2px rgb(0, 0, 0, 0.5);
-    color: black;
+    color: var(--text-color);;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
     background-color: white;
 
     position: relative;

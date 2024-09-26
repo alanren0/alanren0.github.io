@@ -1,14 +1,17 @@
 body {
-    --main-background: #2e2e2e;
+    --main-background: #e7e3d8;
+    --main-background-light: #eeebe5;
+    --main-background-dark: #c2bfb6;
+    --text-color: #292929;
     --accent-color1: #5a9bd4;
     --accent-color1-2: #5a9bd4;
-    --accent-color2: #f25252;
-    --accent-color2-2: #f25252;
-    --accent-color3: #60cf44;
-    --accent-color3-2: #60cf44;
-    --accent-color1-darker: #386286;
-    --accent-color2-darker: #8b3030;
-    --accent-color3-darker: #428a30;
+    --accent-color2: #f06a6a;
+    --accent-color2-2: #f06a6a;
+    --accent-color3: #ddb05c;
+    --accent-color3-2: #ddb05c;
+    --accent-color1-darker: #5492c9;
+    --accent-color2-darker: #d14b4b;
+    --accent-color3-darker: #d8a444;
     padding: 0;
     margin: 0;
     background-color: var(--main-background);
@@ -35,13 +38,13 @@ body {
 .nav-wrapper {
     width: 100%;
     height: 70px;   
-    background-color: rgb(37, 37, 37);
+    background-color: var(--accent-color3);
     position: sticky;
     z-index: 100;
     top: 0;
     display: flex;
     justify-content: center;
-    box-shadow: 4px 4px 4px rgb(0, 0, 0, 0.5);
+    box-shadow: 0px 4px 4px rgb(0, 0, 0, 0.5);
     
     transition: all 0.5s;
 }
@@ -54,7 +57,7 @@ body {
 }
 
 .logo-container {
-    color: white;
+    color: var(--text-color);
     font-size: 32px;
     text-transform: uppercase;
     font-weight: 800;
@@ -82,7 +85,7 @@ body {
     display: flex;
     justify-content: center;
     height: 70vh;
-    background-image: url('images/background/dots2.png'), linear-gradient(var(--main-background), black);
+    background-color: var(--main-background);
     position: relative;
     z-index: 1;
 }
@@ -99,26 +102,25 @@ body {
 .hero-text-1 {
     font-size: 24px;
     margin-bottom: 12px;
-    color: white;
+    color: var(--text-color);
 }
 
 .hero-text {
     font-size: 20px;
-    color: white;
+    color: var(--text-color);
 }
 
 .text-emphasis {
     font-size: 26px;
     font-weight: bold;
-    color:var(--accent-color3);
+    color: black;
 }
 
 
 .heading-container {
     height: 80px;
-    background-color: black;
-    background-image: repeating-linear-gradient(45deg, rgb(77, 77, 77) 0%, rgb(77, 77, 77) 5%, black 5%, black 10%);
-    color: white;
+    background-color: var(--accent-color3);
+    color: var(--text-color);
     width: 100%;
     position: relative;
     z-index: 2;
@@ -134,14 +136,17 @@ body {
     text-transform: uppercase;
     letter-spacing: -2px;
     font-size: 64px;
+    color: var(--text-color);
 }
 
 .footer-wrapper {
     padding: 40px;
     display: flex;
     justify-content: center;
-    background-color: rgb(31, 31, 31);
+    background-color: var(--main-background-dark);
     height: 300px;
+    position: relative;
+    z-index: 10;
 }
 
 .sticky {

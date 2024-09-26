@@ -5,7 +5,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: rgb(31, 31, 31);
+    background-color: var(--main-background-dark);
     position: relative;
     z-index: 1;
     min-height: 90vh;
@@ -84,13 +84,13 @@
 }
 
 .timeline-card:nth-child(3n+1) .timeline-date {
-    background-color: var(--accent-color1);
+    background-color: var(--accent-color1-darker);
 }
 .timeline-card:nth-child(3n+2) .timeline-date {
-    background-color: var(--accent-color2);
+    background-color: var(--accent-color2-darker);
 }
 .timeline-card:nth-child(3n+0) .timeline-date {
-    background-color: var(--accent-color3);
+    background-color: var(--accent-color3-darker);
 }
 
 /* adjust borders on odd cards */
@@ -102,18 +102,19 @@
     padding: 24px;
     margin: 0 10px 0 10px;
     background-image: linear-gradient(var(--content-color), rgb(39, 39, 39) 150%);
-    color: white;
-    box-shadow: rgb(20, 20, 20) 8px 8px 4px, rgb(20, 20, 20) 8px 0 4px;
+    color: var(--text-color);
+    font-weight: 500;
+    box-shadow: #827F79 8px 8px 4px, #827F79 8px -8px 4px;
     border-radius: 0 0 20px 20px;
 }
 .timeline-card:nth-child(3n+1) .timeline-content {
-    background-image: linear-gradient(var(--accent-color1-darker), rgb(39, 39, 39) 150%);
+    background-image: linear-gradient(var(--accent-color1), var(--main-background-light) 150%);
 }
 .timeline-card:nth-child(3n+2) .timeline-content {
-    background-image: linear-gradient(var(--accent-color2-darker), rgb(39, 39, 39) 150%);
+    background-image: linear-gradient(var(--accent-color2), var(--main-background-light) 150%);
 }
 .timeline-card:nth-child(3n+0) .timeline-content {
-    background-image: linear-gradient(var(--accent-color3-darker), rgb(39, 39, 39) 150%);
+    background-image: linear-gradient(var(--accent-color3), var(--main-background-light) 150%);
 }
 
 
